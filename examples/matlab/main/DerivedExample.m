@@ -1,0 +1,2 @@
+classdef DerivedExample < BaseExample
+end
