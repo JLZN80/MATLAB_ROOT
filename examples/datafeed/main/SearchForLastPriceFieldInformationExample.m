@@ -1,0 +1,47 @@
+%% Search for Last Price Field Information
+% Create a Bloomberg(R) connection, and then return information for the
+% last price field.
+%%
+% Create the Bloomberg connection.
+
+c = blp; 
+
+%%
+% Alternatively, you can connect to the Bloomberg Server using
+% <docid:datafeed_ug.buh1qu6-1 blpsrv> or Bloomberg B-PIPE(R) using
+% <docid:datafeed_ug.bue5d9y-1 bpipe>.
+%%
+% Return data as a table by setting the |DataReturnFormat| property of the
+% connection object. If you do not set this property, the |fieldsearch|
+% function returns data as a cell array.
+
+c.DataReturnFormat = 'table';
+
+%%
+% Return information for the search term |LAST_PRICE|.
+
+f = 'LAST_PRICE';
+d = fieldsearch(c,f);
+
+%%
+% Display the first three rows of the field information in |d|.
+
+d(1:3,:)
+
+%%
+% The columns in |d| are:
+%
+% * Category
+% * Field identifier
+% * Field mnemonic
+% * Field name
+% * Field data type
+
+%%
+% Close the Bloomberg connection.
+
+close(c)
+
+
+%% 
+% Copyright 2012 The MathWorks, Inc.
