@@ -1,0 +1,26 @@
+<MusicalEnsemble>
+	<Ensemble>
+		<Music>Jazz</Music>
+            <BandName>Kool Katz</BandName>
+		<Instrumentation>
+			<Instrument type="wind">Trumpet</Instrument>
+			<Instrument type="percussion">Piano</Instrument>
+                <pianotype>concert grand</pianotype>
+			<Instrument type="percussion">Drums</Instrument>
+                <drumkit>Bass drum</drumkit>
+                <drumkit>Floor tom</drumkit>
+                <drumkit>Snare drum</drumkit>
+                <drumkit>Hi-hat</drumkit>
+                <drumkit>Ride cymbal</drumkit>
+			<Instrument type="string">Bass</Instrument>
+                <basstype>upright</basstype>
+		</Instrumentation>
+	</Ensemble>
+    <Musicians>
+        <Name role="trumpeter">Miles</Name>
+        <Name role="vocalist">Roger</Name>
+        <Name role="pianist">Diana</Name>
+        <Name role="drummer">George</Name>
+        <Name role="bassist">John</Name>
+    </Musicians>
+</MusicalEnsemble>
