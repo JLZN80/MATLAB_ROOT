@@ -1,0 +1,51 @@
+%% Create Right Join Using Left and Right Keys 
+% Use an ODBC connection to import joined employee data from two
+% Microsoft(R) SQL Server(R) database tables into MATLAB(R). Create a right
+% join and specify the left and right keys for the join.
+
+%%
+% Create an ODBC database connection to a Microsoft SQL Server database
+% with Windows(R) authentication. Specify a blank user name and password.
+% The database contains the tables |employees| and |departments|.
+
+datasource = 'MS SQL Server Auth';
+conn = database(datasource,'','');
+
+%%
+% Check the database connection. If the |Message| property is
+% empty, then the connection is successful.
+
+conn.Message
+
+%%
+% Join two database tables, |employees| and |departments|, to find the
+% managers for particular departments. The |employees| table is the left
+% table of the join, and the |departments| table is the right table of the
+% join. Here, the column names of the keys are different. Specify the
+% |MANAGER_ID| key in the left table using the |'LeftKeys'| name-value pair
+% argument. Specify the |DEPT_MANAGER_ID| key in the right table using the
+% |'RightKeys'| name-value pair argument. Create a right join using the
+% |'Type'| name-value pair argument.
+
+lefttable = 'employees';
+righttable = 'departments';
+data = sqlouterjoin(conn,lefttable,righttable,'LeftKeys','MANAGER_ID', ...
+    'RightKeys','DEPT_MANAGER_ID','Type','right');
+
+%%
+% |data| is a table that contains the matched rows from the two tables and
+% the unmatched rows from the right table only.
+
+%%
+% Display the last three unmatched rows of joined data. Display the last
+% five variables of the joined data.
+
+tail(data(:,end-4:end),3)
+
+%%
+% Close the database connection.
+
+close(conn)
+
+%% 
+% Copyright 2012 The MathWorks, Inc.

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<demos>
+  <demoitem>
+    <source>DeployAnAcceleratedDSPApplicationForUseWithMATLABRuntimeExample</source>
+    <type>M-file</type>
+    <extension>m</extension>
+    <metadata>ex31934118</metadata>
+    <product>compiler</product>
+    <product>dsp</product>
+    <product>matlab</product>
+    <product>matlabcoder</product>
+    <file component="coder_compiler_dsp" timestamp="1590686118">myRLSFilterSystemIDApp.m</file>
+    <file component="coder_compiler_dsp" timestamp="1590686118">myRLSFilterSystemIDApp_acc.m</file>
+    <file component="coder_compiler_dsp" timestamp="1544381289">myRLSFilterSystemIDSim.m</file>
+    <file component="coder_compiler_dsp" timestamp="1463782291">package_window.png</file>
+    <file component="coder_compiler_dsp" timestamp="1463782291">screener_output.png</file>
+    <file component="coder_compiler_dsp" timestamp="1463782291">compiler_app_dsp_example.png</file>
+  </demoitem>
+</demos>
