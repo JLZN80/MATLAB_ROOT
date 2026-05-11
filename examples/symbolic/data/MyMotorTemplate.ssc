@@ -1,0 +1,41 @@
+component MyMotorTemplate
+% Custom DC Motor
+% This block implements a custom DC motor
+  nodes
+    p = foundation.electrical.electrical; % +:left
+    n = foundation.electrical.electrical; % -:left
+    r = foundation.mechanical.rotational.rotational; % R:right
+    c = foundation.mechanical.rotational.rotational; % C:right
+  end
+  parameters
+      R = {3.9, 'Ohm'};                 %Armature resistance
+      L = {0.000012, 'H'};              %Armature inductance
+      J = {0.000001, 'kg*m^2'};         %Inertia
+      Dr = {0.000003, '(N*m*s)/rad'};   %Rotor damping
+      Ki = {0.000072, '(N*m)/A'};       %Torque constant 
+      Kb = {0.000072, '(V*s)/rad'};     %Back-emf constant
+  end
+  variables
+      torque = {0, 'N*m'};  %Total Torque
+      tau = {0, 'N*m'};     %Electric Torque
+      w = {0, 'rad/s'};     %Angular Velocity 
+      I = {0, 'A'};         %Current
+      V = {0, 'V'};         %Applied voltage
+      Vb = {0, 'V'};        %Counter electromotive force
+  end
+  function setup
+    if(R<=0)
+        error('Winding resistance must be greater than 0.');
+    end
+  end
+  branches
+    torque : r.t -> c.t; % Through variable tau from r to c
+    I   : p.i -> n.i; % Through variable i from p to n
+  end
+  equations
+    w == r.w -c.w; % Across variable w from r to c
+    V == p.v -n.v; % Across variable v from p to n
+  end
+end
+
+
