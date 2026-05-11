@@ -1,0 +1,33 @@
+﻿# MATLAB_ROOT
+# Mantener libre la carpeta examples/ para que los ejemplos conserven
+# todos sus recursos: .m, .mat, .dat, .png, .xml, .stl, .hpp, .vb, etc.
+
+# Ignorar todo por defecto fuera de las reglas permitidas.
+*
+
+# Permitir recorrer carpetas.
+!*/
+
+# Permitir todo el contenido de examples/ sin restringir extensiones.
+!examples/**
+
+# Codigo y archivos principales del proyecto fuera de examples/.
+!*.m
+!*.mlx
+!README.md
+!.gitignore
+
+# Datos y recursos utiles fuera de examples/, si se agregan en la raiz.
+!*.dat
+!*.mat
+!*.csv
+!*.txt
+!*.png
+!*.jpg
+!*.gif
+!*.fig
+!*.sql
+
+# Nota:
+# Si luego se crean carpetas de codigo, datos o documentacion fuera de examples/,
+# se pueden agregar reglas especificas para permitirlas o filtrarlas mejor.
